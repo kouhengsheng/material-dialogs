@@ -7,7 +7,6 @@ apply from: '../bintrayconfig.gradle'
 
 android {
   compileSdkVersion versions.compileSdk
-  buildToolsVersion versions.buildTools
 
   compileOptions {
     if (modulePackageId != null && modulePackageId != '') {
@@ -41,7 +40,6 @@ dependencies {
   implementation 'androidx.recyclerview:recyclerview:' + versions.androidxRecyclerView
   implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:' + versions.kotlin
   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + versions.coroutines
-
   implementation project(':core')
   implementation project(':input')
 }

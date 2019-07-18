@@ -2,31 +2,33 @@ apply from: './dependencies.gradle'
 apply from: './versionsPlugin.gradle'
 
 buildscript {
-  apply from: './dependencies.gradle'
+    apply from: './dependencies.gradle'
 
-  repositories {
-    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
-    google()
-    jcenter()
-  }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+        google()
+        jcenter()
+    }
 
-  dependencies {
-    classpath 'com.android.tools.build:gradle:' + versions.gradlePlugin
-    classpath 'com.diffplug.spotless:spotless-plugin-gradle:' + versions.spotlessPlugin
-    classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:' + versions.kotlin
-    classpath 'com.github.ben-manes:gradle-versions-plugin:' + versions.versionPlugin
-    classpath 'com.novoda:bintray-release:' + versions.bintrayPlugin
-  }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:' + versions.gradlePlugin
+        classpath 'com.diffplug.spotless:spotless-plugin-gradle:' + versions.spotlessPlugin
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.41'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:' + versions.versionPlugin
+        classpath 'com.novoda:bintray-release:' + versions.bintrayPlugin
+    }
 }
 
 allprojects {
-  repositories {
-    maven { url "https://dl.bintray.com/drummer-aidan/maven" }
-    google()
-    jcenter()
-  }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "https://dl.bintray.com/drummer-aidan/maven" }
+        google()
+        jcenter()
+    }
 
-  tasks.withType(Javadoc).all {
-    enabled = false
-  }
+    tasks.withType(Javadoc).all {
+        enabled = false
+    }
 }

@@ -4,41 +4,36 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-  compileSdkVersion versions.compileSdk
-  buildToolsVersion versions.buildTools
+    compileSdkVersion versions.compileSdk
 
-  defaultConfig {
-    applicationId "com.afollestad.materialdialogssample"
-    minSdkVersion versions.minSdk
-    targetSdkVersion versions.compileSdk
-    versionCode versions.publishVersionCode
-    versionName versions.publishVersion
-  }
+    defaultConfig {
+        applicationId "com.afollestad.materialdialogssample"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.publishVersionCode
+        versionName versions.publishVersion
+    }
 
-  packagingOptions {
-    exclude 'META-INF/atomicfu.kotlin_module'
-  }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
 }
 
 dependencies {
-  implementation project(':core')
-  implementation project(':input')
-  implementation project(':files')
-  implementation project(':color')
-  implementation project(':datetime')
-  implementation project(':bottomsheets')
-  implementation project(':lifecycle')
-
-  implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:' + versions.kotlin
-
-  implementation 'androidx.appcompat:appcompat:' + versions.androidxCore
-  implementation 'androidx.gridlayout:gridlayout:' + versions.androidxRecyclerView
-  implementation 'androidx.recyclerview:recyclerview:' + versions.androidxRecyclerView
-  implementation 'com.google.android.material:material:' + versions.androidxMaterial
-
-  implementation 'com.afollestad:assent:' + versions.assent
-
-  debugImplementation 'com.squareup.leakcanary:leakcanary-android:' + versions.leakCanary
+    implementation project(':core')
+    implementation project(':input')
+    implementation project(':files')
+    implementation project(':color')
+    implementation project(':datetime')
+    implementation project(':bottomsheets')
+    implementation project(':lifecycle')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
+    implementation "androidx.appcompat:appcompat:${versions.androidxCore}"
+    implementation "androidx.gridlayout:gridlayout:${versions.androidxRecyclerView}"
+    implementation "androidx.recyclerview:recyclerview:${versions.androidxRecyclerView}"
+    implementation "com.google.android.material:material:${versions.androidxMaterial}"
+    implementation "com.afollestad:assent:${versions.assent}"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${versions.leakCanary}"
 }
 
 apply from: '../spotless.gradle'

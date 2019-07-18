@@ -7,7 +7,6 @@ apply from: '../bintrayconfig.gradle'
 
 android {
   compileSdkVersion versions.compileSdk
-  buildToolsVersion versions.buildTools
 
   compileOptions {
     if (modulePackageId != null && modulePackageId != '') {
@@ -36,7 +35,6 @@ android {
 dependencies {
   implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:' + versions.kotlin
   implementation project(':core')
-
   implementation 'androidx.lifecycle:lifecycle-runtime:' + versions.lifecycle
   annotationProcessor 'androidx.lifecycle:lifecycle-compiler:' + versions.lifecycle
 }
